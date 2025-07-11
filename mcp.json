@@ -1,0 +1,25 @@
+{
+  "connection": {
+    "uri": "bolt://localhost:7687",
+    "username": "neo4j",
+    "password": "testtest"
+  },
+  "schema": {
+    "State": {
+      "label": "State",
+      "properties": ["name"]
+    },
+    "County": {
+      "label": "County",
+      "properties": ["name"]
+    },
+    "City": {
+      "label": "City",
+      "properties": ["name"]
+    },
+    "relationships": [
+      {"type": "IN_STATE", "from": "County", "to": "State"},
+      {"type": "IN_COUNTY", "from": "City", "to": "County"}
+    ]
+  }
+}
